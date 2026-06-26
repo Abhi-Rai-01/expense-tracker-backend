@@ -1,37 +1,37 @@
 # Project Architecture
 
-## Overview
+## Layered Architecture
 
 Client
 ↓
-REST Controller
+Controller
 ↓
-Service Layer
+Service
 ↓
-Repository Layer
+Repository
 ↓
 MySQL Database
 
 ---
 
-## Entities
+## Current Entities
 
 ### User
 
-- id
-- name
-- email
-- password
-- createdAt
+* id
+* name
+* email
+* password
+* createdAt
 
-### Expense (Planned)
+### Expense (Design Phase)
 
-- id
-- amount
-- category
-- description
-- expenseDate
-- createdAt
+* id
+* amount
+* category (Enum)
+* description
+* expenseDate
+* user
 
 ---
 
@@ -43,7 +43,7 @@ Many Expenses
 
 ---
 
-## Package Structure
+## Current Package Structure
 
 controller
 
