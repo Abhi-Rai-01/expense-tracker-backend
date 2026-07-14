@@ -1,6 +1,7 @@
 package in.expense.tracker.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,6 +37,9 @@ public class User {
 	@CreationTimestamp
 	@Column(nullable = false)
 	private LocalDateTime createdAt;
+	
+	@OneToMany(mappedBy = "user")
+	private List<Expense> expenses;
 	
 	public User() {
 		

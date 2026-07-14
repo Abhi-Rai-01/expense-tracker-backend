@@ -4,14 +4,29 @@
 
 * [x] Spring Boot Project Setup
 * [x] Configure MySQL
-* [x] Create User Entity
-* [ ] Create Expense Entity
-* [ ] Design Entity Relationships
-* [ ] Create Repository Layer
+* [x] Design User entity
+* [x] Implement User entity
+* [x] Design Expense entity
+* [x] Create ExpenseCategory enum
+* [x] Implement Expense entity
+* [x] Map User-Expense relationship
+* [x] Verify generated database schema
+
+Status: Completed
 
 ---
 
-## Phase 2 - User Module
+## Phase 2 - Repository Layer
+
+* [ ] Understand Spring Data Repository abstraction
+* [ ] Create UserRepository
+* [ ] Create ExpenseRepository
+* [ ] Understand JpaRepository generic types
+* [ ] Test basic persistence operations
+
+---
+
+## Phase 3 - User Module
 
 * [ ] Register DTO
 * [ ] Login DTO
@@ -22,7 +37,7 @@
 
 ---
 
-## Phase 3 - Expense Module
+## Phase 4 - Expense Module
 
 * [ ] Add Expense
 * [ ] View Expense
@@ -31,7 +46,7 @@
 
 ---
 
-## Phase 4 - Filtering
+## Phase 5 - Filtering
 
 * [ ] Filter by Category
 * [ ] Filter by Month
@@ -39,14 +54,14 @@
 
 ---
 
-## Phase 5 - Security
+## Phase 6 - Security
 
 * [ ] Spring Security
 * [ ] JWT Authentication
 
 ---
 
-## Phase 6 - Production Ready
+## Phase 7 - Production Ready
 
 * [ ] Global Exception Handling
 * [ ] Validation
@@ -56,6 +71,6 @@
 
 ---
 
-Target Completion
+## Target Completion
 
-06 July 2026
+To be revised after Repository Layer completion.

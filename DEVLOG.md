@@ -68,3 +68,63 @@ Dropped the table and allowed Hibernate to recreate it.
 ### Today's Learning
 
 Good backend design starts with business requirements rather than framework annotations.
+
+# Development Log
+
+## 14 July 2026
+
+### Progress Since Previous Development Session
+
+Before continuing implementation, I independently studied and revised:
+
+- Java enums and enum constants.
+- Parameterized constructors in enums.
+- The difference between constant metadata and instance-specific data.
+- JPA association concepts.
+- One-to-One relationships.
+- One-to-Many relationships.
+- Many-to-One relationships.
+- Many-to-Many relationships.
+- Bidirectional entity relationships.
+- Owning side and inverse side in JPA.
+- Collection mapping using Java collections.
+
+This study helped clarify the User-Expense relationship before implementing it.
+
+### Completed
+
+- Created `ExpenseCategory` enum.
+- Designed and implemented the `Expense` entity.
+- Added a bidirectional relationship between `User` and `Expense`.
+- Added `@ManyToOne` mapping in `Expense`.
+- Added `@OneToMany` collection mapping in `User`.
+- Configured `user_id` as a non-null foreign key.
+- Verified the generated database schema using Hibernate logs.
+
+### Decisions Made
+
+- Used `EnumType.STRING` instead of `EnumType.ORDINAL`.
+- Used `List<Expense>` for the user's expense collection.
+- Defined `Expense` as the owning side of the JPA relationship.
+- Defined `User` as the inverse side using `mappedBy = "user"`.
+- Kept `description` nullable.
+- Did not add `createdAt` to `Expense` because it is not currently required by the MVP.
+
+### Concepts Learned
+
+- Enum values should represent fixed constants.
+- Instance-specific data such as an expense amount belongs to the `Expense` entity, not `ExpenseCategory`.
+- `EnumType.ORDINAL` depends on enum constant positions and can cause incorrect mappings if constants are reordered.
+- `EnumType.STRING` stores enum names and is safer for the current domain model.
+- Domain ownership and JPA relationship ownership are different concepts.
+- The owning side manages the foreign key relationship.
+- The side containing the foreign key is generally the owning side in a Many-to-One / One-to-Many mapping.
+- `mappedBy` refers to the Java field name on the owning side.
+- Bidirectional associations allow navigation from both related entities.
+- Hibernate can map entity collections such as `List<Expense>`.
+
+### Current Project Stage
+
+Domain model completed and database schema verified.
+
+Next stage: Repository Layer.

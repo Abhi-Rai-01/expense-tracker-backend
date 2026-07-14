@@ -57,16 +57,23 @@ src
 ---
 
 ## Current Progress
+## Current Progress
 
-* [x] Project Setup
-* [x] MySQL Configuration
-* [x] User Entity
-* [ ] Expense Entity
-* [ ] Repository Layer
-* [ ] DTO Layer
-* [ ] Authentication
-* [ ] Expense CRUD
-* [ ] JWT Security
+- [x] Project Setup
+- [x] Database Configuration
+- [x] User Entity
+- [x] Expense Entity
+- [x] Expense Category Enum
+- [x] User-Expense Relationship Mapping
+- [ ] Repository Layer
+- [ ] DTO Layer
+- [ ] Service Layer
+- [ ] User Registration
+- [ ] Authentication
+- [ ] Expense CRUD
+- [ ] Expense Filtering
+- [ ] JWT Security
+- [ ] Global Exception Handling
 
 ---
 

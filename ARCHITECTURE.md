@@ -14,32 +14,76 @@ MySQL Database
 
 ---
 
-## Current Entities
+## Domain Model
 
 ### User
 
-* id
-* name
-* email
-* password
-* createdAt
+- id
+- name
+- email
+- password
+- createdAt
+- expenses
 
-### Expense (Design Phase)
+### Expense
 
-* id
-* amount
-* category (Enum)
-* description
-* expenseDate
-* user
+- id
+- amount
+- category
+- description
+- expenseDate
+- user
+
+### ExpenseCategory
+
+- FOOD
+- GROCERY
+- TRAVEL
+- HEALTH
+- EDUCATION
+- ENTERTAINMENT
+- BILLS
+- MISCELLANEOUS
 
 ---
 
-## Relationship
+## Entity Relationship
 
-One User
-↓
-Many Expenses
+One User can have many Expenses.
+
+Each Expense belongs to one User.
+
+User
+    |
+    | One-to-Many
+    |
+    v
+Expense
+
+The relationship is bidirectional.
+
+### Owning Side
+
+`Expense`
+
+The `expenses` table contains the `user_id` foreign key.
+
+### Inverse Side
+
+`User`
+
+The User entity uses `mappedBy = "user"`.
+
+---
+
+## Database Relationship
+
+users
+- id (Primary Key)
+
+expenses
+- id (Primary Key)
+- user_id (Foreign Key -> users.id)
 
 ---
 
